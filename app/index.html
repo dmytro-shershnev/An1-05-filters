@@ -26,7 +26,7 @@
 						<th>Category</th>
 						<th>Expiry</th>
 						<th class="text-right">Price</th>
-						<!-- <th>JSON</th> -->
+						<th>JSON</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -42,7 +42,7 @@
 						<td>{{$ctrl.getExpiryDate(p.expiry) | date}}</td>
 						<td class="text-right">{{p.price | currency}}</td>
 						<!-- <td>{{p | json}}</td> -->
-						<td>{{$ctrl.customSorter(p)}}</td>
+						<td>{{$ctrl.customSorter(p) | limitTo : 1 : 2}}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -51,13 +51,11 @@
 			<div ng-bind-html="$ctrl.htmlSnippet"></div>
 			<div ng-bind-html="$ctrl.htmlSnippet | linky"></div>
 		</div>
-	<div>
+	</div>
 
 	<script src="vendor/angular/angular.min.js"></script>
 	<script src="vendor/angular-sanitize/angular-sanitize.min.js"></script>
-	<script src="vendor/angular-i18n/angular-locale_ru-ru.js">
-
-	</script>
+	<script src="vendor/angular-i18n/angular-locale_ru-ru.js"></script>
 
 	<script src="app.js"></script>
 	<script src="feature/feature.module.js"></script>
